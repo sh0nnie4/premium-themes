@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Grid Example with Images and Hyperlinks</title>
+<style>
+    /* Styling for the grid container */
+    .grid-container {
+        display: grid;
+        grid-gap: 10px; /* Gap between grid items */
+        width: 100%; /* Take up full width of the page */
+        max-width: 100%; /* Ensure full width */
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+    }
+    
+    /* Styling for the grid items */
+    .grid-item {
+        background-color: #f0f0f0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Styling for the images */
+    .grid-item img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Styling for the hyperlinks */
+    .grid-item a {
+        display: block;
+        margin-top: 10px; /* Add some space between image and link */
+    }
+
+    /* Media query for responsive design */
+    @media screen and (min-width: 768px) { /* Adjust based on your desired breakpoint */
+        .grid-container {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        }
+    }
+
+    @media screen and (min-width: 1200px) { /* Adjust based on your desired breakpoint */
+        .grid-container {
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+    <!-- Grid items -->
+    <div class="grid-item">
+        <img src="image1.jpg" alt="Image 1">
+        <a href="link1.html">Link 1</a>
+    </div>
+    <div class="grid-item">
+        <img src="image2.jpg" alt="Image 2">
+        <a href="link2.html">Link 2</a>
+    </div>
+    <div class="grid-item">
+        <img src="image3.jpg" alt="Image 3">
+        <a href="link3.html">Link 3</a>
+    </div>
+    <div class="grid-item">
+        <img src="image4.jpg" alt="Image 4">
+        <a href="link4.html">Link 4</a>
+    </div>
+    <div class="grid-item">
+        <img src="image5.jpg" alt="Image 5">
+        <a href="link5.html">Link 5</a>
+    </div>
+    <div class="grid-item">
+        <img src="image6.jpg" alt="Image 6">
+        <a href="link6.html">Link 6</a>
+    </div>
+    <div class="grid-item">
+        <img src="image7.jpg" alt="Image 7">
+        <a href="link7.html">Link 7</a>
+    </div>
+    <div class="grid-item">
+        <img src="image8.jpg" alt="Image 8">
+        <a href="link8.html">Link 8</a>
+    </div>
+</div>
+
+</body>
+</html>
