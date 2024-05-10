@@ -5,45 +5,65 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Responsive Grid Example with Images and Hyperlinks</title>
 <style>
+    /* Resetting default margin and padding */
+    body, h1, h2, h3, p, ul, li {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Ensuring full height of the page */
+    html, body {
+        height: 100%;
+    }
+
     /* Styling for the grid container */
     .grid-container {
         display: grid;
-        grid-gap: 10px; /* Gap between grid items */
-        width: 100%; /* Take up full width of the page */
-        max-width: 100%; /* Ensure full width */
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+        grid-auto-rows: 200px; /* Set row height */
+        gap: 10px; /* Gap between grid items */
+        width: 95%; /* Take up most of the page */
+        max-width: 1400px; /* Limit the maximum width of the grid */
+        margin: 0 auto; /* Center the grid horizontally */
+        padding: 10px; /* Add some padding around the grid */
     }
     
     /* Styling for the grid items */
     .grid-item {
         background-color: #f0f0f0;
-        padding: 20px;
+        padding: 5px;
         text-align: center;
     }
 
     /* Styling for the images */
     .grid-item img {
-        max-width: 100%;
-        height: auto;
+        width: 100%; /* Ensure image fills the entire width of the column */
+        height: 100%; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure the image covers the entire container */
     }
 
     /* Styling for the hyperlinks */
     .grid-item a {
         display: block;
-        margin-top: 10px; /* Add some space between image and link */
+        margin-top: 5px; /* Add some space between image and link */
+        color: #333; /* Link color */
+        text-decoration: none; /* Remove default underline */
+        font-weight: bold; /* Bold text */
     }
 
-    /* Media query for responsive design */
-    @media screen and (min-width: 768px) { /* Adjust based on your desired breakpoint */
+    /* Media query for desktop screens */
+    @media screen and (min-width: 1024px) {
         .grid-container {
-            grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            grid-template-columns: repeat(2, 1fr); /* 2 columns for desktop screens */
+            grid-auto-rows: 300px; /* Increase row height for desktop screens */
         }
     }
 
-    @media screen and (min-width: 1200px) { /* Adjust based on your desired breakpoint */
+    /* Media query for smaller screens */
+    @media screen and (max-width: 767px) {
         .grid-container {
-            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            grid-template-columns: repeat(1, 1fr); /* Single column for smaller screens */
+            grid-auto-rows: auto; /* Auto row height for smaller screens */
         }
     }
 </style>
@@ -53,16 +73,16 @@
 <div class="grid-container">
     <!-- Grid items -->
     <div class="grid-item">
-        <img src="image1.jpg" alt="Image 1">
-        <a href="link1.html">Link 1</a>
+        <img src="image1.jpg" alt="Image 1"><h3>Fashion 1</h3>
+        <a href="https://belliza-demo.myshopify.com/?fts=0%3F">Click here</a>
     </div>
     <div class="grid-item">
         <img src="image2.jpg" alt="Image 2">
-        <a href="link2.html">Link 2</a>
+        <a href="https://belliza-demo.myshopify.com/?fts=0%3F">Link 2</a>
     </div>
     <div class="grid-item">
         <img src="image3.jpg" alt="Image 3">
-        <a href="link3.html">Link 3</a>
+        <a href="https://belliza-demo.myshopify.com/?fts=0%3F">Link 3</a>
     </div>
     <div class="grid-item">
         <img src="image4.jpg" alt="Image 4">
